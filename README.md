@@ -1,8 +1,8 @@
 # Magento 2 Security Checker
 
-A simple Magento 2 module which leverages the SensioLabs Security Checker to checks if our application uses dependencies with known security vulnerabilities.
+A simple Magento 2 module which leverages the [SensioLabs Security Checker](https://github.com/sensiolabs/security-checker) to checks if our application uses dependencies with known security vulnerabilities.
 
-SensioLabs Security Checker internally uses the [Security Check Web service](https://security.symfony.com/) and the [Security Advisories Database](https://github.com/FriendsOfPHP/security-advisories).
+[SensioLabs Security Checker](https://github.com/sensiolabs/security-checker) internally uses the [Security Check Web service](https://security.symfony.com/) and the [Security Advisories Database](https://github.com/FriendsOfPHP/security-advisories).
 
 ## Installation
 
