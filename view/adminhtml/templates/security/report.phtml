@@ -1,0 +1,70 @@
+<?php
+/**
+ * This file is part of the juashyam/security-checker library
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @copyright Copyright (c) Shyam Kumar <kumar.30.shyam@gmail.com>
+ * @license http://opensource.org/licenses/MIT MIT
+ * @link https://packagist.org/packages/juashyam/security-checker Packagist
+ * @link https://github.com/juashyam/security-checker GitHub
+ */
+?>
+<?php
+/**
+ * @var $block \Juashyam\SecurityChecker\Block\Adminhtml\Security\Report
+ */
+?>
+<?php
+    $viewModel = $block->getViewModel();
+    $vulnerabilities = $viewModel->getVulnerabilities();
+?>
+<?php if ($vulnerabilities): ?>
+<div id="accordion" data-mage-init='{
+    "accordion":{
+        "collapsible": true
+    }}'>
+    <?php foreach ($vulnerabilities as $category => $data): ?>
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <h4><?= $category ?> (<?= $data['version'] ?>)</h4>
+        </div>
+    </div>
+    <div data-role="content">
+        <div class="data-grid-wrap table-wrapper">
+            <table class="data-grid">
+                <thead>
+                    <tr>
+                        <th class="data-grid-th">#</th>
+                        <th class="data-grid-th"><?= __('Vulnerabilities') ?></th>
+                        <th class="data-grid-th"><?= __('Details') ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $advisories = $data['advisories'] ?>
+                    <?php if ($advisories): ?>
+                        <?php foreach ($advisories as $advisory): ?>
+                            <?php $cve = $advisory['cve'] ?: $viewModel->getCvePlaceHolder() ?>
+                            <tr class="data-row">
+                                <td><?= $cve ?></td>
+                                <td><?= $advisory['title'] ?></td>
+                                <td>
+                                    <a href="<?= $advisory['link'] ?>" target="_blank"><?= __('Show Details') ?></a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr class="data-row">
+                            <td colspan="3"><?= __('There is no advisory for the current version.') ?></td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <?php endforeach; ?>
+</div>
+<?php else: ?>
+    <p><?= __('There is no known vulnerability with dependencies in the current version.') ?></p>
+<?php endif; ?>

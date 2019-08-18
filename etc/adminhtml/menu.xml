@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the juashyam/security-checker library
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @copyright Copyright (c) Shyam Kumar <kumar.30.shyam@gmail.com>
+ * @license http://opensource.org/licenses/MIT MIT
+ * @link https://packagist.org/packages/juashyam/security-checker Packagist
+ * @link https://github.com/juashyam/security-checker GitHub
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Juashyam_SecurityChecker::security_checker"
+             title="Security Checker"
+             translate="title"
+             module="Juashyam_SecurityChecker"
+             sortOrder="80" parent="Magento_Backend::system"
+             dependsOnModule="Juashyam_SecurityChecker"
+             resource="Juashyam_SecurityChecker::securitychecker"/>
+        <add id="Juashyam_SecurityChecker::analyse"
+             title="Analyse"
+             translate="title"
+             module="Juashyam_SecurityChecker"
+             sortOrder="10"
+             parent="Juashyam_SecurityChecker::security_checker"
+             action="securitychecker/analyse/index/"
+             resource="Juashyam_SecurityChecker::analyse"/>
+    </menu>
+</config>

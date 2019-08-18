@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the juashyam/security-checker library
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @copyright Copyright (c) Shyam Kumar <kumar.30.shyam@gmail.com>
+ * @license http://opensource.org/licenses/MIT MIT
+ * @link https://packagist.org/packages/juashyam/security-checker Packagist
+ * @link https://github.com/juashyam/security-checker GitHub
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="security_report_listing_data_source" xsi:type="string">Juashyam\SecurityChecker\Model\ResourceModel\Report\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Corra\Author\Model\ResourceModel\Author\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">corra_author</argument>
+            <argument name="eventPrefix" xsi:type="string">author_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">author_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Corra\Author\Model\ResourceModel\Author</argument>
+        </arguments>
+    </type>
+</config>
