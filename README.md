@@ -1,4 +1,8 @@
-# Magento 2 Security Checker
+![Security Checker](https://user-images.githubusercontent.com/13532448/123786870-d3fc9680-d8f7-11eb-9477-fd739383669b.png)
+
+[![Latest Stable Version](http://poser.pugx.org/juashyam/security-checker/v)](https://packagist.org/packages/juashyam/security-checker)
+[![Total Downloads](http://poser.pugx.org/juashyam/security-checker/downloads)](https://packagist.org/packages/juashyam/security-checker)
+[![License](http://poser.pugx.org/juashyam/security-checker/license)](https://packagist.org/packages/juashyam/security-checker)
 
 A simple Magento 2 module which leverages the [SensioLabs Security Checker](https://github.com/sensiolabs/security-checker) to checks if our application uses dependencies with known security vulnerabilities.
 
