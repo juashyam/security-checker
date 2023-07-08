@@ -1,3 +1,11 @@
+**WARNING**: Don't use this piece of software anymore as the underlying web
+service will stop working at the end of January 2021. Instead, use the
+[Open-Source CLI tool][1] that does the same locally, or use the [Symfony
+CLI][2] tool.
+
+[1]: https://github.com/fabpot/local-php-security-checker
+[2]: https://symfony.com/download
+
 ![Security Checker](https://user-images.githubusercontent.com/13532448/123786870-d3fc9680-d8f7-11eb-9477-fd739383669b.png)
 
 [![Latest Stable Version](http://poser.pugx.org/juashyam/security-checker/v)](https://packagist.org/packages/juashyam/security-checker)
